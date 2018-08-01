@@ -39,7 +39,7 @@ class _SJMoodState extends State<SJMood> {
 
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Login'),
+        title: new Text('Snap Journal - Mood'),
       ),
       body: new Container(
         padding: new EdgeInsets.all(20.0),
