@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class SJExcercise extends StatefulWidget {
+class SJExercise extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => new _SJExcerciseState();
+  State<StatefulWidget> createState() => new _SJExerciseState();
 }
 
-class _SJExcerciseData {
+class _SJExerciseData {
   String SJWhen = '';
   String SJWhere = '';
-  String SJExcercise = ''; // Excersize
+  String SJExercise = ''; // Excersize
   String SJTime = '';
   String SJDistance = '';
   String SJWeight = '';
@@ -17,12 +17,12 @@ class _SJExcerciseData {
   String SJEnergyBefore = '';
   String SJEnergyAfter = '';
   String SJHow = '';
-  String SJLevel = '';
+  String SJOverallMood = '';
 }
 
-class _SJExcerciseState extends State<SJExcercise> {
+class _SJExerciseState extends State<SJExercise> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-  _SJExcerciseData _data = new _SJExcerciseData();
+  _SJExerciseData _data = new _SJExerciseData();
 
   void submit() {
     // First validate form.
@@ -32,7 +32,7 @@ class _SJExcerciseState extends State<SJExcercise> {
       print('Printing the Mood Event.');
       print('SJWhen: ${_data.SJWhen}');
       print('SJWhere: ${_data.SJWhere}');
-      print('SJExcercise: ${_data.SJExcercise}');
+      print('SJExercise: ${_data.SJExercise}');
       print('SJTime: ${_data.SJTime}');
       print('SJDistance: ${_data.SJDistance}');
       print('SJWeight: ${_data.SJWeight}');
@@ -41,7 +41,7 @@ class _SJExcerciseState extends State<SJExcercise> {
       print('SJEnergyBefore: ${_data.SJEnergyBefore}');
       print('SJEnergyAfter: ${_data.SJEnergyAfter}');
       print('SJHow: ${_data.SJHow}');
-      print('SJLevel: ${_data.SJLevel}');
+      print('SJOverallMood: ${_data.SJOverallMood}');
     }
   }
 
@@ -51,7 +51,7 @@ class _SJExcerciseState extends State<SJExcercise> {
 
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Snap Journal - Mood'),
+        title: new Text('Snap Journal - Excercise'),
       ),
       body: new Container(
         padding: new EdgeInsets.all(20.0),
@@ -83,7 +83,7 @@ class _SJExcerciseState extends State<SJExcercise> {
                   this._data.SJWhere = value;
                 }
               ),
-              /* SJExcercise */
+              /* SJExercise */
               new TextFormField(
                 keyboardType: TextInputType.text, // @TODO SJWho: use a contact lookup
                 decoration: new InputDecoration(
@@ -92,7 +92,7 @@ class _SJExcerciseState extends State<SJExcercise> {
                 ),
                 // validator: this._validateEmail,
                 onSaved: (String value) {
-                  this._data.SJExcercise = value;
+                  this._data.SJExercise = value;
                 }
               ),
               /* SJTime */
@@ -192,19 +192,18 @@ class _SJExcerciseState extends State<SJExcercise> {
                   this._data.SJHow = value;
                 }
               ),
-              /* SJLevel */
+              /* SJOverallMood */
               new TextFormField(
-                keyboardType: TextInputType.number, // @TODO SJLevel: convert to 1-5 selector
+                keyboardType: TextInputType.number, // @TODO SJOverallMood: convert to 1-5 selector
                 decoration: new InputDecoration(
                   hintText: '1-5 1=bad 3=average 5=awesome',
                   labelText: 'Overall Mood'
                 ),
                 // validator: this._validateEmail,
                 onSaved: (String value) {
-                  this._data.SJLevel = value;
+                  this._data.SJOverallMood = value;
                 }
               ),
-
               new Container(
                 width: screenSize.width,
                 child: new RaisedButton(
