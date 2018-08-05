@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:snap_journal/theme/style.dart';
 import 'widgets/DialpadButton.dart';
 import 'pages/SJFood.dart';
 import 'pages/SJMood.dart';
@@ -14,9 +15,9 @@ void main() {
 */
 void main() {
   runApp(MaterialApp(
-    title: 'Named Routes Demo',
+    title: 'Apple A Day',
     // Start the app with the "/" named route. In our case, the app will start
-    // on the FirstScreen Widget
+    // on the Dialpad Widget
     initialRoute: '/',
     routes: {
       // When we navigate to the "/" route, build the FirstScreen Widget
@@ -38,6 +39,7 @@ class SnapJournalDialPad extends StatelessWidget {
 
     return MaterialApp(
       title: title,
+      theme: appTheme,
       home: Scaffold(
         appBar: AppBar(
           title: Text(title),
@@ -47,13 +49,13 @@ class SnapJournalDialPad extends StatelessWidget {
           // horizontal, this would produce 2 rows.
           crossAxisCount: 2,
           children: [
-            DialPadButton(Icons.restaurant, 'Food', '/SJFood', context),
-            DialPadButton(Icons.mood, 'Mood', '/SJMood', context),
-            DialPadButton(Icons.fitness_center, 'Exercise', '/SJWorkout', context),
+            dialPadButton(Icons.restaurant, 'Food', '/SJFood', context),
+            dialPadButton(Icons.mood, 'Mood', '/SJMood', context),
+            dialPadButton(Icons.fitness_center, 'Exercise', '/SJWorkout', context),
 
-            DialPadButton(Icons.local_hospital, 'Meds', '/SJMed', context),
-            DialPadButton(Icons.local_hotel, 'Sleep', '/SJSleep', context),
-            DialPadButton(Icons.wc, 'Stool', '/SJStool', context),
+            dialPadButton(Icons.local_hospital, 'Meds', '/SJMed', context),
+            dialPadButton(Icons.local_hotel, 'Sleep', '/SJSleep', context),
+            dialPadButton(Icons.wc, 'Stool', '/SJStool', context),
           ],
         ),
       ),
