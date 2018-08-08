@@ -16,8 +16,8 @@ class _SJSleepData {
 
   String SJSleepQuality = '';
 
-  String SJCaffieneCount = '';
-  String SJCaffieneTimeOfLast = '';
+  String SJCaffeineCount = '';
+  String SJCaffeineTimeOfLast = '';
 
   String SJActivityHourBeforeSleep = '';
 
@@ -45,8 +45,8 @@ class _SJSleepState extends State<SJSleep> {
 
       print('SJSleepQuality: ${_data.SJSleepQuality}');
 
-      print('SJCaffieneCount: ${_data.SJCaffieneCount}');
-      print('SJCaffieneTimeOfLast: ${_data.SJCaffieneTimeOfLast}');
+      print('SJCaffeineCount: ${_data.SJCaffeineCount}');
+      print('SJCaffeineTimeOfLast: ${_data.SJCaffeineTimeOfLast}');
 
       print('SJActivityHourBeforeSleep: ${_data.SJActivityHourBeforeSleep}');
 
@@ -145,28 +145,28 @@ class _SJSleepState extends State<SJSleep> {
                 }
               ),
 
-              /* SJCaffieneCount */
+              /* SJCaffeineCount */
               new TextFormField(
-                keyboardType: TextInputType.number, // @TODO SJCaffieneCount:
+                keyboardType: TextInputType.number, // @TODO SJCaffeineCount:
                 decoration: new InputDecoration(
                   hintText: '',
-                  labelText: 'Caffiene Count'
+                  labelText: 'Caffeine Count'
                 ),
                 // validator: this._validateEmail,
                 onSaved: (String value) {
-                  this._data.SJCaffieneCount = value;
+                  this._data.SJCaffeineCount = value;
                 }
               ),
-              /* SJCaffieneTimeOfLast */
+              /* SJCaffeineTimeOfLast */
               new TextFormField(
-                keyboardType: TextInputType.datetime, // @TODO SJCaffieneTimeOfLast: use a date time picker
+                keyboardType: TextInputType.datetime, // @TODO SJCaffeineTimeOfLast: use a date time picker
                 decoration: new InputDecoration(
                   hintText: 'YYYY-MM-DD H:i',
-                  labelText: 'Time of last caffiene intake'
+                  labelText: 'Time of last caffeine intake'
                 ),
                 // validator: this._validateEmail,
                 onSaved: (String value) {
-                  this._data.SJCaffieneTimeOfLast = value;
+                  this._data.SJCaffeineTimeOfLast = value;
                 }
               ),
 
